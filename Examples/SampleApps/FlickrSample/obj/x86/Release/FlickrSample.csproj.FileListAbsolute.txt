@@ -1,0 +1,8 @@
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\FlickrSample\obj\x86\Release\FlickrSample.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\FlickrSample\obj\x86\Release\CircularProgressBar.baml
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\FlickrSample\obj\x86\Release\CircularProgressBar.g.cs
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\FlickrSample\obj\x86\Release\MainWindow.g.cs
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\FlickrSample\obj\x86\Release\App.g.cs
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\FlickrSample\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\FlickrSample\obj\x86\Release\FlickrSample_MarkupCompile.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\FlickrSample\obj\x86\Release\FlickrSample_MarkupCompile.lref

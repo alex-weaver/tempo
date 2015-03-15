@@ -1,0 +1,10 @@
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\obj\Debug\VideoCaptureLib.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\bin\Debug\VideoCaptureLib.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\bin\Debug\VideoCaptureLib.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\bin\Debug\Lifetime.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\bin\Debug\MediaFoundation.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\bin\Debug\Tempo.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\bin\Debug\Tempo.Wpf.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\bin\Debug\MediaFoundation.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\obj\Debug\VideoCaptureLib.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCaptureLib\VideoCaptureLib\obj\Debug\VideoCaptureLib.pdb

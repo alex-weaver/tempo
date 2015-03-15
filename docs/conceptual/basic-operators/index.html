@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Operators - Tempo Documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Tempo Documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+        <span>Getting Started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/quickstart">Quickstart</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/tutorial-helloworld">Tutorial - Hello World</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/tutorial-todo-list">Tutorial - Todo List</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/about-video-capture">About the Video Capture Sample</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Integration</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-events">Integrating With External Events</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-threads">Integrating With Threads</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-wpf">Integrating With WPF</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Conceptual Documentation</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../overview">Overview</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Basic Operators</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#basic-operators">Basic operators</a></li>
+                            
+                                <li><a class="toctree-l3" href="#icellread-extension-methods">ICellRead extension methods</a></li>
+                            
+                                <li><a class="toctree-l3" href="#ilistcellread-extension-methods">IListCellRead extension methods</a></li>
+                            
+                                <li><a class="toctree-l3" href="#events-static-methods">Events static methods</a></li>
+                            
+                                <li><a class="toctree-l3" href="#timing-static-methods">Timing static methods</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../cells">Cells</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../request-brokers">Request Brokers</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../reference-counting">Reference Counting</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../threading">Threading</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Reference</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference-docs">Reference Documentation</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../.."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    <li>Basic Operators</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="basic-operators">Basic operators</h1>
+<p>Most of the methods for handling core functionality in Tempo are located in one of the following places:</p>
+<h2 id="icellread-extension-methods">ICellRead extension methods</h2>
+<p>The <code>Whilst</code> and <code>WhilstTrue</code> methods provide a way for the activity of a continuous block to be divided into smaller chunks.
+Both methods activate inner continuous block as long as an observed boolean cell holds a true value.</p>
+<p>The <code>When</code> and <code>WhenTrue</code> methods trigger an inner sequential block when an observed boolean cell transitions
+from false to true.</p>
+<p>The <code>WithLatest</code> method activates an inner continuous block for each value of a cell. This is useful for activating a different
+set of continuous expressions for different states (for example, for different screens of an application).</p>
+<p>Both <code>Latest</code> and <code>Changes</code> trigger a sequential block to run each time an <code>ICellRead&lt;T&gt;</code> changes.
+The difference is that sequential block in <code>Latest</code> observes only the most recent value of the cell,
+whereas in <code>Changes</code> the sequential block is passed all the values that the cell has held since the block
+was last invoked.</p>
+<p>The <code>Bind</code> method updates the contents of another cell whenever this cell changes.</p>
+<h2 id="ilistcellread-extension-methods">IListCellRead extension methods</h2>
+<p>The <code>WithEach</code> method activates an inner continuous block for each element of a list (in a similar way to the
+WithLatest method of ICellRead).</p>
+<p>The <code>Bind</code> method updates the contents of another cell whenever this cell changes.</p>
+<h2 id="events-static-methods">Events static methods</h2>
+<p>The <code>Once</code> method executes a sequential block once each time the containing continuous scope is activated.
+<code>WhenEnded</code> is this method's counterpart: It executes a sequential block once each time the containing socpe
+is deactivated.</p>
+<p>The <code>Listen</code>, <code>Subscribe</code> and <code>SubscribeValue</code> methods are provided for integrating with .NET events and
+IObservable instances. You can find more detail on this in <a href="../../integration/integrating-events">Integrating Events</a>.</p>
+<p>The <code>AnyChange</code> method triggers a sequential block whenever any of a set of cells change.</p>
+<h2 id="timing-static-methods">Timing static methods</h2>
+<p>The <code>After</code> method triggers a sequential block to run once after a certain time interval has passed after each time
+the containing scope is activated.</p>
+<p>The <code>Every</code> method repeatedly runs a sequential block at a given interval.</p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cells" class="btn btn-neutral float-right" title="Cells"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../overview" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      <span><a href="../overview" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../cells" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

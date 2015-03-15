@@ -1,0 +1,14 @@
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology\bin\Release\Lifetime.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology\bin\Release\Lifetime.xml
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology\obj\Release\Tempo.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology\bin\Release\Tempo.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology\bin\Release\Tempo.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology\obj\Release\Tempo.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology\obj\Release\Tempo.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\src\Tempo\bin\Release\Tempo.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\src\Tempo\bin\Release\Tempo.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\src\Tempo\bin\Release\Lifetime.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\src\Tempo\bin\Release\Lifetime.xml
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\src\Tempo\obj\Release\Tempo.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\src\Tempo\obj\Release\Tempo.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\src\Tempo\obj\Release\Tempo.csprojResolveAssemblyReference.cache

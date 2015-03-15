@@ -1,0 +1,7 @@
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\HelloWorldSample\obj\x86\Release\MainWindow.baml
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\HelloWorldSample\obj\x86\Release\MainWindow.g.cs
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\HelloWorldSample\obj\x86\Release\App.g.cs
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\HelloWorldSample\obj\x86\Release\HelloWorldSample_MarkupCompile.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\HelloWorldSample\obj\x86\Release\HelloWorldSample.g.resources
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\HelloWorldSample\obj\x86\Release\HelloWorldSample.Properties.Resources.resources
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\HelloWorldSample\obj\x86\Release\HelloWorldSample.csproj.GenerateResource.Cache

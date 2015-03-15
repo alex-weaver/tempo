@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tempo Documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Tempo Documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+        <span>Getting Started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="getting-started/quickstart/">Quickstart</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="getting-started/tutorial-helloworld/">Tutorial - Hello World</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="getting-started/tutorial-todo-list/">Tutorial - Todo List</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="getting-started/about-video-capture/">About the Video Capture Sample</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Integration</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="integration/integrating-events/">Integrating With External Events</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="integration/integrating-threads/">Integrating With Threads</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="integration/integrating-wpf/">Integrating With WPF</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Conceptual Documentation</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="conceptual/overview/">Overview</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="conceptual/basic-operators/">Basic Operators</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="conceptual/cells/">Cells</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="conceptual/request-brokers/">Request Brokers</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="conceptual/reference-counting/">Reference Counting</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="conceptual/threading/">Threading</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Reference</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="reference-docs/">Reference Documentation</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    <li>Home</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="tempo">Tempo</h1>
+<p>Tempo is a C# library for building reactive applications. Tempo provides mechanisms for
+safely mixing
+reactive code with imperative code. Rather than focusing on <strong>events</strong>, reactive code
+in Tempo models <strong>relationships</strong> between elements of time-varying state. Imperative code
+blocks are <strong>isolated</strong>; changes made by imperative code are not visible to the rest of
+the program until the block has finished. In other words, from the perspective of
+reactive observers, the imperative block appears to have executed instantly. This is great
+for preventing glitches (temporarily incorrect values) that may cause unwanted side-effects.</p>
+<p>By modelling reactive code around time-varying state, we can eliminate a great deal of
+accidental state that would be introduced when using event based models.</p>
+<p>Tempo also explicitly models the lifetime of code and data. Reactive code is modelled as
+logically continuous; for example, a reactive expression might bind the contents of a UI
+widget to always be equal to a corresponding value in the model. The lifetime of this
+expression may be bound to the duration the view is visible, so when the view is shown,
+the expression is activated, and when the view is hidden it is deactivated. For this
+duration, the expression is <strong>logically</strong> continuously active.</p>
+<p>Finally, the concept of <strong>request brokers</strong> combines time-varying state and lifetime
+management to provide a way to share access to exclusive resources.</p>
+<h2 id="documentation-overview">Documentation overview</h2>
+<p>If you are new to Tempo, the Getting Started sections provides tutorials to get up
+and running with Tempo in practice. Get started with <a href="getting-started/quickstart/">Quickstart</a>.</p>
+<p>The conceptual documentation breaks down the core ideas behind the library.
+To learn more, start with <a href="conceptual/overview/">Overview</a>.</p>
+<p>If you need to look up specific details of the API, check out the
+<a href="reference-docs/">Reference Documentation</a></p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getting-started/quickstart/" class="btn btn-neutral float-right" title="Quickstart"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      <span><a href="" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="getting-started/quickstart/" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

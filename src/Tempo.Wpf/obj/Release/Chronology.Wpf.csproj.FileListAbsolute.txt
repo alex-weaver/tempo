@@ -1,0 +1,9 @@
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology.Wpf\obj\Release\Chronology.Wpf.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology.Wpf\bin\Release\Chronology.Wpf.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology.Wpf\bin\Release\Chronology.Wpf.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology.Wpf\bin\Release\Chronology.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology.Wpf\bin\Release\Lifetime.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology.Wpf\bin\Release\Chronology.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology.Wpf\obj\Release\Chronology.Wpf.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology.Wpf\obj\Release\Chronology.Wpf.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\Chronology.Wpf\bin\Release\Lifetime.xml

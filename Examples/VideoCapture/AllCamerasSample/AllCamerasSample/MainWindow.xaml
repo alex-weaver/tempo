@@ -1,0 +1,16 @@
+﻿<Window x:Class="VideoTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ListView x:Name="feedList" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderThickness="0" Background="#222">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+
+        <Image x:Name="liveImage" />
+    </Grid>
+</Window>
