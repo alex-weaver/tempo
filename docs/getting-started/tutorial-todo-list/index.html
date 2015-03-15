@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial - Todo List - Tempo Documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Tempo Documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+        <span>Getting Started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../quickstart">Quickstart</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../tutorial-helloworld">Tutorial - Hello World</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Tutorial - Todo List</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#tutorial-todo-list">Tutorial - Todo List</a></li>
+                            
+                                <li><a class="toctree-l3" href="#setting-up-the-project">Setting up the project</a></li>
+                            
+                                <li><a class="toctree-l3" href="#create-the-ui">Create the UI</a></li>
+                            
+                                <li><a class="toctree-l3" href="#create-the-todolistitem-class">Create the TodoListItem Class</a></li>
+                            
+                                <li><a class="toctree-l3" href="#construct-the-main-cells">Construct the main cells</a></li>
+                            
+                                <li><a class="toctree-l3" href="#create-window-bindings">Create window bindings</a></li>
+                            
+                                <li><a class="toctree-l3" href="#implementing-add-and-delete">Implementing add and delete</a></li>
+                            
+                                <li><a class="toctree-l3" href="#dispaying-the-list-items">Dispaying the list items</a></li>
+                            
+                                <li><a class="toctree-l3" href="#implementing-the-detail-view">Implementing the detail view</a></li>
+                            
+                                <li><a class="toctree-l3" href="#wrapping-up">Wrapping up</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../about-video-capture">About the Video Capture Sample</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Integration</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-events">Integrating With External Events</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-threads">Integrating With Threads</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-wpf">Integrating With WPF</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Conceptual Documentation</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../conceptual/overview">Overview</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../conceptual/basic-operators">Basic Operators</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../conceptual/cells">Cells</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../conceptual/request-brokers">Request Brokers</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../conceptual/reference-counting">Reference Counting</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../conceptual/threading">Threading</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Reference</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference-docs">Reference Documentation</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../.."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    <li>Tutorial - Todo List</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="tutorial-todo-list">Tutorial - Todo List</h1>
+<p>In this tutorial we'll create a Todo list application using WPF for the UI. The application
+will allow items to be added and deleted from the list, the text of an item to be edited and
+items can be checked off as done. This application demonstrates a simple master/detail view,
+and introduces a couple of concepts:</p>
+<ul>
+<li>The WithEach operator for introducing a scope for list elements.</li>
+<li>Creating a record class which contains one or more memory cells.</li>
+</ul>
+<h2 id="setting-up-the-project">Setting up the project</h2>
+<p>Follow the steps in the <a href="../quickstart">Quickstart</a> guide to get a skeleton project
+up and running, then we can start building our UI.</p>
+<h2 id="create-the-ui">Create the UI</h2>
+<p>The UI will be divided into two panes: on the left hand side will be a list of items in the
+todo list, along with buttons to add and delete elements. Filling the rest of the view will
+be the <em>detail</em> view to edit a todo item. The detail view will contain two controls, a TextBox
+to edit the text of the item, and a checkbox to flag items as done.
+Replace the default Grid element in MainWindow.xaml with the following code:</p>
+<pre><code>&lt;DockPanel LastChildFill=&quot;True&quot;&gt;
+    &lt;DockPanel LastChildFill=&quot;True&quot;&gt;
+        &lt;Grid DockPanel.Dock=&quot;Bottom&quot; Margin=&quot;8,0,8,8&quot;&gt;
+            &lt;Button x:Name=&quot;addButton&quot; Content=&quot;Add&quot; Width=&quot;80&quot; Height=&quot;36&quot; HorizontalAlignment=&quot;Left&quot; /&gt;
+            &lt;Button x:Name=&quot;deleteButton&quot; Content=&quot;Delete&quot; Width=&quot;80&quot; Height=&quot;36&quot; HorizontalAlignment=&quot;Right&quot; /&gt;
+        &lt;/Grid&gt;
+        &lt;ListView x:Name=&quot;masterList&quot; Width=&quot;200&quot; Margin=&quot;0,0,0,16&quot;&gt;&lt;/ListView&gt;
+    &lt;/DockPanel&gt;
+    &lt;Grid x:Name=&quot;detailView&quot; Margin=&quot;10&quot;&gt;
+        &lt;TextBlock Text=&quot;Item text:&quot; Margin=&quot;0,20,0,0&quot; Width=&quot;66&quot; TextAlignment=&quot;Right&quot; HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot; /&gt;
+        &lt;TextBox x:Name=&quot;textField&quot; Margin=&quot;70,16,10,0&quot; Height=&quot;26&quot; VerticalAlignment=&quot;Top&quot; /&gt;
+
+        &lt;TextBlock Text=&quot;Done?&quot; Margin=&quot;0,66,0,0&quot; Width=&quot;66&quot; TextAlignment=&quot;Right&quot; HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot; /&gt;
+        &lt;CheckBox x:Name=&quot;isDoneCheckbox&quot; Margin=&quot;69,60,0,0&quot; HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot;&gt;
+            &lt;CheckBox.LayoutTransform&gt;
+                &lt;ScaleTransform ScaleX=&quot;2&quot; ScaleY=&quot;2&quot; /&gt;
+            &lt;/CheckBox.LayoutTransform&gt;
+        &lt;/CheckBox&gt;
+    &lt;/Grid&gt;
+&lt;/DockPanel&gt;
+</code></pre>
+
+<h2 id="create-the-todolistitem-class">Create the TodoListItem Class</h2>
+<p>Add a new class to the project called TodoListItem. This will represent a single item in
+the list. Each item needs to store the text of the item, and a flag indicating whether the
+item is done. The text will be represented by a string cell, and the done flag will be a bool
+cell. Since this class contains cells, it should implement IRefCounted, so that the lifetime
+of the cells can be tracked. The implementations of AddRef and Release can simply forward the
+calls on to the cells. Adding the cells and the IRefCounted implementation, we end up with this:</p>
+<pre><code>public class TodoListItem : IRefCounted
+{
+    public MemoryCell&lt;string&gt; text;
+    public MemoryCell&lt;bool&gt; isDone;
+
+    public TodoListItem()
+    {
+        this.text = new MemoryCell&lt;string&gt;(&quot;&quot;);
+        this.isDone = new MemoryCell&lt;bool&gt;(false);
+    }
+
+    public void AddRef()
+    {
+        text.AddRef();
+        isDone.AddRef();
+    }
+
+    public void Release()
+    {
+        text.Release();
+        isDone.Release();
+    }
+}
+</code></pre>
+
+<h2 id="construct-the-main-cells">Construct the main cells</h2>
+<p>At the top level, the essential state of the application requires a list of TodoListItem
+instances, plus an integer to track which item is currently selected. This will determine
+which item (if any) is modified by the controls in the detail view. Add the following to
+the WhileRunning method:</p>
+<pre><code>var mainList = new ListCell&lt;TodoListItem&gt;();
+var selectedItem = new MemoryCell&lt;int&gt;(-1);
+</code></pre>
+
+<p>A value of -1 in the selectedItem value will be used to indicate that nothing is selected.</p>
+<h2 id="create-window-bindings">Create window bindings</h2>
+<p>We need to observe a number of interface properties: the state of the add and delete buttons,
+the contents of the text field, the state of the checkbox and the selected index of the listview.
+Add the following to WhileRunning to map each of these properties onto a cell:</p>
+<pre><code>var addButtonPressed = PropertyAdapter.Read&lt;bool&gt;(window.addButton, Button.IsPressedProperty);
+var deleteButtonPressed = PropertyAdapter.Read&lt;bool&gt;(window.deleteButton, Button.IsPressedProperty);
+var textField = PropertyAdapter.Read&lt;string&gt;(window.textField, TextBox.TextProperty);
+var isDoneField = PropertyAdapter.Read&lt;bool&gt;(window.isDoneCheckbox, CheckBox.IsCheckedProperty);
+var uiSelection = PropertyAdapter.Read&lt;int&gt;(window.masterList, ListView.SelectedIndexProperty);
+</code></pre>
+
+<h2 id="implementing-add-and-delete">Implementing add and delete</h2>
+<p>Before we can edit or display the list of todo items, we need a way to add new ones. We can
+use ICellRead<bool>.WhenTrue to trigger an action whenever the add button transitions from
+'not pressed' to
+'pressed'. In the add handler, we will create a new blank todo list item, and add it to the
+list. To make the user experience smoother, we will also change the selection to the new
+item. We need to defer execution of the selection until another logical step, because changing
+the list contents may also modify the selection, so we need to make sure our change happens
+<em>after</em> any implicit change. The code to do this is as follows:</p>
+<pre><code>addButtonPressed.WhenTrue(() =&gt;
+{
+    var newIndex = mainList.Add(new TodoListItem());
+    Events.Once(() =&gt; selectedItem.Cur = newIndex);
+});
+</code></pre>
+
+<p>The implementation of delete follows a similar pattern. We use WhenTrue to trigger an
+imperative block when the button is pressed, and in the body of the block we remove
+the currently selected item from the list. The only thing we need to check is whether
+the selection is empty (represented by -1) or not valid (refers to an index past the
+end of the list).</p>
+<pre><code>deleteButtonPressed.WhenTrue(() =&gt;
+{
+    if (selectedItem.Cur &gt;= 0 &amp;&amp; selectedItem.Cur &lt; mainList.Count)
+    {
+        mainList.RemoveAt(selectedItem.Cur);
+    }
+});
+</code></pre>
+
+<p>Adding this code will implement the complete functionality for the two buttons, however
+the changes they make to the application state will be invisible since changes to the
+list cell are not reflected in the list view. We cover this in the next section.</p>
+<h2 id="dispaying-the-list-items">Dispaying the list items</h2>
+<p>This is perhaps the most important part: displaying the todo list contents in the list view.
+We will use the data stored in the list cell to generate a list of strings to display in
+the view. This generated list will automatically be kept up to date with any changes to
+the data model. The output strings will always include the item's text, and if the item
+is marked as done, the text will be followed by a check mark in square brackets.</p>
+<p>Since we need to observe cells held within each element of the source list, we will need
+a continuous scope to observe them in. <code>IListCellRead&lt;T&gt;.WithEach</code> constructs a scope for each element
+of a list, which lasts until that element is removed, replaced or the list is destroyed.
+The body of WithEach must return an ICellRead for each element of the list, which allows
+us to handle the case where a modification to a member of TodoListItem, such as the isDone
+cell, can cause the output list to change even though the source list itself has not changed.</p>
+<p>If we only wanted to display the item's text, and ignore the value of isDone, we could write
+the following:</p>
+<pre><code>var listText = mailList.WithEach(item =&gt; item.text);
+</code></pre>
+<p>This would construct an <code>IListCellRead&lt;string&gt;</code> which would update both when items are added
+and removed, and when any item's text cell changes. To incorporate the value of isDone into
+the result, we can use CellBuilder.Merge to construct a new cell based on the text and isDone
+cells. This new cell would be updated whenever either of the source cells changed. The final
+version of the above line looks like this:</p>
+<pre><code>var listText = mainList.WithEach(item =&gt;
+    CellBuilder.Merge(item.text, item.isDone, (text, isDone) =&gt; text + (isDone ? &quot; [✔]&quot; : &quot;&quot;)));
+</code></pre>
+
+<p>Each time any element's text or isDone cell changes, the lambda in the second line is
+re-evaluated. If isDone is true, a check mark in square brackets is appended to the text,
+otherwise the empty string is appended to the text. Displaying this new list of strings
+in the ListView can easily be done using SelectorBinding:</p>
+<pre><code>SelectorBinding.Bind(listText, window.masterList);
+</code></pre>
+<p>If you run the application now, you should see that the add and delete buttons will add and
+remove empty list items. To check it's working properly, you can manually add some test data
+to mainList at the beginning of WhileRunning, and verify that it shows up in the list.</p>
+<p>The last thing missing from the ListView is a binding for the selection. Currently, when
+the user changes the selection in the list, the <em>selectedItem</em> cell is not updated, and
+vice versa. We can use <code>ICellRead&lt;T&gt;.Latest</code> to watch for the selectedItem cell changing, and update
+the list view, and we can use the Bind method to read from the uiSelection variable set up earlier
+and keep the selecteItem cell updated:</p>
+<pre><code>// Bind the ui selection to the model's representation of the current selection. Apply changes in both directions.
+selectedItem.Latest(value =&gt; window.masterList.SelectedIndex = value);
+uiSelection.Bind(selectedItem);
+</code></pre>
+
+<p>Now, running the application and repeatedly clicking 'add' should select the last element
+of the list, rather than previously where the selection didn't change.</p>
+<h2 id="implementing-the-detail-view">Implementing the detail view</h2>
+<p>Next, we implement the functionality of the ui controls on the right hand side of the screen.
+This will broadly comprise three parts: Firstly, the controls should be enabled if and only
+if the selection is valid. Next, the controls should be updated when the selection changes.
+Finally, when the content of the TextBox or the status of the CheckBox are modified, the
+changes should be mirrored in the model.</p>
+<p>First, we can simplify these operations by creating a cell which contains the currently
+selected list item, or null if the selection is empty. We can do this with the ElementAt
+extension method of IListCellRead:</p>
+<pre><code>var curItem = mainList.ElementAt(selectedItem);
+</code></pre>
+<p>We can disable all the detail controls by changing the value of window.detailView.IsEnabled.
+The following line project the contents of curItem to a boolean cell, which holds true iff
+the contents of curItem is non-null, and updates the window.detailView.IsEnabled property
+whenever this boolean cell changes:</p>
+<pre><code>curItem.Select(x =&gt; x != null).Latest(value =&gt; window.detailView.IsEnabled = value);
+</code></pre>
+<p>Next, we follow a similar pattern for updating the contents of the fields when the
+selection changes. We use Select to construct cells which contain either the desired
+value if the selection is non-null, or a default value. Then we use <code>ICellRead&lt;T&gt;.Latest</code> to update
+the field contents when these derived cells change:</p>
+<pre><code>// When the selection changes, update contents of the text field and the CheckBox
+curItem.Select(x =&gt; x == null ? null : x.text.Cur).Latest(value =&gt; window.textField.Text = value);
+curItem.Select(x =&gt; x == null ? false : x.isDone.Cur).Latest(value =&gt; window.isDoneCheckbox.IsChecked = value);
+</code></pre>
+
+<p>Finally, we can use <code>ICellRead&lt;T&gt;.Lastest</code> to observe when the value of the fields changes. If the
+selection is non-null, we update the selection with the new values:</p>
+<pre><code>// When the text field changes, update the model
+textField.Latest(value =&gt;
+{
+    if (curItem.Cur != null)
+    {
+        curItem.Cur.text.Cur = value;
+    }
+});
+
+// When the checkbox changes, update the model
+isDoneField.Latest(value =&gt;
+{
+    if (curItem.Cur != null)
+    {
+        curItem.Cur.isDone.Cur = value;
+    }
+});
+</code></pre>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>This completes the application. Editing the detail fields should now update the list immediately.
+Changes to the selection (either by clicking on list items, or by clicking add or delete) should
+update the contents of the fields. The full source code for this tutorial is available in the
+TodoListSample in the Examples directory of the repository.</p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about-video-capture" class="btn btn-neutral float-right" title="About the Video Capture Sample"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tutorial-helloworld" class="btn btn-neutral" title="Tutorial - Hello World"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      <span><a href="../tutorial-helloworld" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../about-video-capture" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

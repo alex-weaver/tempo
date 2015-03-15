@@ -1,0 +1,10 @@
+C:\Users\Alex\Dropbox\_Dev\Concurrency\MFLib\src\bin\Release\MediaFoundation.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\MFLib\src\bin\Release\MediaFoundation.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\MFLib\src\obj\Release\MediaFoundation.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\MFLib\src\obj\Release\MediaFoundation.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\MFLib\src\obj\Release\MediaFoundation-2010.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\MFLib\src\obj\Release\MediaFoundation-2010.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\MFLib\src\obj\Release\MediaFoundation.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\MFLib\src\bin\Release\MediaFoundation.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\MFLib\src\bin\Release\MediaFoundation.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\MFLib\src\obj\Release\MediaFoundation.pdb

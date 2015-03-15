@@ -1,0 +1,9 @@
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\ChronologyTest\bin\Release\ChronologyTest.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\ChronologyTest\bin\Release\ChronologyTest.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\ChronologyTest\bin\Release\Chronology.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\ChronologyTest\bin\Release\Lifetime.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\ChronologyTest\bin\Release\Chronology.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\ChronologyTest\obj\Release\ChronologyTest.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\ChronologyTest\obj\Release\ChronologyTest.dll
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\ChronologyTest\obj\Release\ChronologyTest.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Chronology\src\ChronologyTest\bin\Release\Lifetime.xml

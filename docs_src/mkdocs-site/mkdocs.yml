@@ -1,0 +1,21 @@
+site_name: Tempo Documentation
+site_dir: '../../docs'
+use_directory_urls: true
+pages:
+- [index.md, Home]
+- [getting-started/quickstart.md, Getting Started, Quickstart]
+- [getting-started/tutorial-helloworld.md, Getting Started, Tutorial - Hello World]
+- [getting-started/tutorial-todo-list.md, Getting Started, Tutorial - Todo List]
+- [getting-started/about-video-capture.md, Getting Started, About the Video Capture Sample]
+- [integration/integrating-events.md, Integration, Integrating With External Events]
+- [integration/integrating-threads.md, Integration, Integrating With Threads]
+- [integration/integrating-wpf.md, Integration, Integrating With WPF]
+- [conceptual/overview.md, Conceptual Documentation, Overview]
+- [conceptual/basic-operators.md, Conceptual Documentation, Basic Operators]
+- [conceptual/cells.md, Conceptual Documentation, Cells]
+- [conceptual/request-brokers.md, Conceptual Documentation, Request Brokers]
+- [conceptual/reference-counting.md, Conceptual Documentation, Reference Counting]
+- [conceptual/threading.md, Conceptual Documentation, Threading]
+- [reference-docs.md, Reference, Reference Documentation]
+
+theme: readthedocs

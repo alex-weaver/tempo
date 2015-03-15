@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Threading - Tempo Documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Tempo Documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+        <span>Getting Started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/quickstart">Quickstart</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/tutorial-helloworld">Tutorial - Hello World</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/tutorial-todo-list">Tutorial - Todo List</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/about-video-capture">About the Video Capture Sample</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Integration</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-events">Integrating With External Events</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-threads">Integrating With Threads</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-wpf">Integrating With WPF</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Conceptual Documentation</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../overview">Overview</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../basic-operators">Basic Operators</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../cells">Cells</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../request-brokers">Request Brokers</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../reference-counting">Reference Counting</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Threading</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#threading">Threading</a></li>
+                            
+                                <li><a class="toctree-l3" href="#synchronization">Synchronization</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Reference</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference-docs">Reference Documentation</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../.."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    <li>Threading</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="threading">Threading</h1>
+<p>Scheduling work to be performed on another thread is straightforward in Tempo. The <em>Thread</em> operator
+must be used from a continuous block, and it is passed an inner continuous block which is executed
+on a new thread. A short pseudocode example:</p>
+<pre><code>main()
+{
+   ...
+   thread
+   {
+        every(TimeSpan.FromSeconds(60))
+        {
+            PerformSlowOperation();
+        }
+   }
+}
+</code></pre>
+
+<p>In this example, some slow work is performed in a background thread every 60 seconds, but does
+not interrupt the main thread. It is common to need a thread nested within a whilst operator,
+so Tempo provides the <em>WhilstThread</em> operator which combines these into one statement.</p>
+<h2 id="synchronization">Synchronization</h2>
+<p>By default, Tempo assumes that all work is thread local. This reflects the library's approach
+to scaling: Use isolation where possible, and synchronize where necessary. In making isolation
+the default, Tempo can schedule and execute thread local work efficiently. Eventually some
+communication between threads will be necessary, and only at this point is synchronization used.</p>
+<p>In Tempo, threads communicate via shared cells. This means there are two places where synchronization
+must be considered: when a shared cell is observed by a continuous block, and when the contents of a shared
+cell is updated by an imperative block. The class <code>Shared&lt;T&gt;</code> is provided to wrap cells that are to be
+shared across threads.</p>
+<p>In order to safely update a shared cell, it must first be locked. Tempo provides the <em>Lock</em> operator
+so that a thread can ensure exclusive access to all shared cells involved in an update. If any of the
+cells are currently locked elsewhere, the body of the lock operator will be put in a queue until the
+cells become available. This means that in Tempo, lock contention does not block a thread - instead
+only the block that requires the lock will wait and the thread will continue to schedule other work
+until it is possible to lock all the required cells. The lock operator should not be used from within
+another lock operator. Instead, the outermost lock operator should lock all the required data. Following
+this rule means that deadlock cannot occur, although it is still possible for a long-running operation
+to starve other threads of access to locked cells.</p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../reference-docs" class="btn btn-neutral float-right" title="Reference Documentation"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../reference-counting" class="btn btn-neutral" title="Reference Counting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      <span><a href="../reference-counting" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../../reference-docs" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

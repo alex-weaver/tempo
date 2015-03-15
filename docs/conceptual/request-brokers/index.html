@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Request Brokers - Tempo Documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Tempo Documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+        <span>Getting Started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/quickstart">Quickstart</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/tutorial-helloworld">Tutorial - Hello World</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/tutorial-todo-list">Tutorial - Todo List</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../getting-started/about-video-capture">About the Video Capture Sample</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Integration</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-events">Integrating With External Events</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-threads">Integrating With Threads</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../integration/integrating-wpf">Integrating With WPF</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Conceptual Documentation</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../overview">Overview</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../basic-operators">Basic Operators</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../cells">Cells</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Request Brokers</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#request-brokers">Request Brokers</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../reference-counting">Reference Counting</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../threading">Threading</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Reference</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../reference-docs">Reference Documentation</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../.."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    <li>Request Brokers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="request-brokers">Request Brokers</h1>
+<p>Calling a function in a continuous scope is a convenient way to allocate resources; the lifetime of
+the containing scope naturally defines the duration for which the resource is allocated. This means that
+there is no need to imperatively allocate and free the resource, that will happen automatically when the
+scope is activated and deactivated. Using this idea of a function call in a continuous scope simplifies
+reasoning about when resources will be in use.</p>
+<p>We can take this model further: say the resource is an exclusive resource - ie. there can only be at most
+one concurrent activation of the resource. In this case we might want to share access among concurrent
+clients. We do this by placing a broker in between the client and the resource: clients apply requests
+to the broker and the broker aggregates all of the concurrent requests into a single request to be placed
+on the resource itself. The RequestBroker class provides one way to handle this aggregation. Other methods
+are possible, but RequestBroker should cover the majority of cases.</p>
+<p>Requests are reified as objects so that they can be stored by a RequestBroker. The resulting aggregate is
+also an object for the same reason. The RequestBroker keeps a list of all concurrent requests. Each time this collection is modified,
+RequestBroker calls a function to calculate what the new aggregated value should be. This function is provided
+via a constructor argument.</p>
+<p>A request broker exposes two methods for applying a request: ApplyRequest and ApplyConstRequest. The latter
+is a simple convenience method to avoid boilerplate when constructing a constant request. Requests must be
+applied in a continuous context. A client of the resource broker must provide a time-varying request value,
+and in return the broker provides a time-varying result value. There may be many concurrent requests
+applied to the broker; this provides an opportunity for the broker to apply a policy to decide how
+best to service the requests collectively.</p>
+<p>For example, a broker representing a video camera resource may expect a request object which contains
+a desired resolution, and return a time-varying image value. If there are a number of concurrent requests
+for the same camera, the implementer of the broker has a choice of a number of different possible policies.
+A simple rule could be to pick the highest resolution among all the concurrent requests, and then provide
+all clients with a feed of that resolution. In this case, the client must be prepared to receive a feed
+that has a different resolution to what was requested. Alternatively, the broker could model exclusive
+access semantics, where only one request is selected to be serviced, and the others receive null values
+until the selected request is removed or changed, after which another request is selected.</p>
+<p>In the VideoCapture sample, a request broker is used in the CaptureDevice class to aggregate requests.
+In this case, the broker itself remains private to the class, instead exposing a continuous method to
+apply requests, which keeps the API for CaptureDevice simple.</p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reference-counting" class="btn btn-neutral float-right" title="Reference Counting"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cells" class="btn btn-neutral" title="Cells"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      <span><a href="../cells" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../reference-counting" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

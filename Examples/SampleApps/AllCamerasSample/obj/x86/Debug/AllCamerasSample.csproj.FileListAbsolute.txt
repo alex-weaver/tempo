@@ -1,0 +1,1 @@
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\SampleApps\AllCamerasSample\bin\x86\Debug\AllCamerasSample.exe.config

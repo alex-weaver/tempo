@@ -1,0 +1,13 @@
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\bin\Debug\VideoTest.exe.config
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\VideoTest.exe
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\VideoTest.pdb
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\AllCamerasSample.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\CameraView.baml
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\MainWindow.baml
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\CameraView.g.cs
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\MainWindow.g.cs
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\App.g.cs
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\VideoTest_MarkupCompile.cache
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\VideoTest.g.resources
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\VideoTest.Properties.Resources.resources
+C:\Users\Alex\Dropbox\_Dev\Concurrency\Tempo\Examples\VideoCapture\AllCamerasSample\AllCamerasSample\obj\Debug\AllCamerasSample.csproj.GenerateResource.Cache
