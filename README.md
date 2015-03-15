@@ -40,7 +40,11 @@ To get started building WPF applications with Tempo, see the main documentation 
 
 ## Documentation
 
+Full documentation can be found at the following location:
+
+http://alex-weaver.github.io/tempo/docs/
+
 ## Licensing
 
-Please see the license.txt file.
+Please see the LICENSE.txt file.
 
